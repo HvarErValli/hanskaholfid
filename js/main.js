@@ -120,8 +120,10 @@ function apigetFromUsers(email, password) {
                     alert("Þú hefur verið skráð/ður/tt inn")
                     setTimeout(function(){
                         window.location.href = "404.html";
-                    }, 1000);
-                    
+                    }, 500);
+                } else {
+                    loginErrorMsg.style.opacity = 1;
+                   
             }}
         })
     })
@@ -250,4 +252,34 @@ function loader(){
     writeUserKennitalaToHTML(current_bilnumerid, "kennitala")
     writeUserSimanumerToHTML(current_bilnumerid, "simanumer")
     writeUserHeimilisfangToHTML(current_bilnumerid, "heimilisfang")
+    baetaVidTjoni(current_bilnumerid)
 };
+
+function baetaVidTjoni(bilnumer){
+    fetch("./database.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        data.forEach(car => {
+            if (car.bilnumer == bilnumer.toLowerCase()) {
+                fjoldiTjona = car.tjonasaga.fjoldiTjona};
+        })
+    })
+    .catch(error => console.log(error));
+    const tjonalisti = document.getElementById("tjonasaga");
+    for (let i = 0; i < fjoldiTjona; i++) {
+        tjonalisti.insertAdjacentHTML("beforeend", `
+            <div class="col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-cog text-primary mb-4"></i>
+                        <h5>Bílnúmer og týpa</h5>
+                        <p id="info_bilnumer">Bílnúmer: </p>
+                        <p id="typa">Týpa: </p>
+                    </div>
+                </div>
+            </div>
+        `); 
+    }
+}

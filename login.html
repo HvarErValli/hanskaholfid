@@ -94,12 +94,9 @@
 						const username = loginForm.signinEmail.value;
 						const password = loginForm.signinPassword.value;
 
-						if(apigetFromUsers(username, password) == true){
+						if(apigetFromUsers(username, password)){
 							alert("You have successfully logged in.");
-						} else {
-        					loginErrorMsg.style.opacity = 1;
-						}
-					})
+						}})
 				</script>
 				<!-- <a href="#0" class="cd-close-form">Close</a> -->
 			</div>

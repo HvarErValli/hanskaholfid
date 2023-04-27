@@ -12,7 +12,7 @@
         "simanumer": "+354 666-0812"
       },
       "tjonasaga": {
-        "tjonadur": true,
+        "fjoldiTjona": 1,
         "tjon1": {
           "typa": "Velta",
           "dagsetning": "15.04.2018",
@@ -34,7 +34,7 @@
         "simanumer": "+354 581-2345"
       },
       "tjonasaga": {
-        "tjonadur": false
+        "fjoldiTjona": 0
       }
     }
   ]
