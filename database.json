@@ -6,6 +6,7 @@
       "argerd": "2014",
       "akstur": "135000km",
       "eigandi": {
+        "notendanafn": "user",
         "nafn": "Valgeir Níls Vignisson",
         "kennitala": "230102-2790",
         "heimilisfang": "Bakkasel 31, 109",
@@ -17,7 +18,13 @@
           "typa": "Velta",
           "dagsetning": "15.04.2018",
           "lagad": "20.07.2018",
-          "vottad": "Max1"
+          "vottad": "Max1",
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm":{
+            "skiptUm1": "Hurð, bílstjóra, framan",
+            "skiptUm2": "Framrúða",
+            "skiptUm3": "Öxull, framan"
+          }
         }
       }
     },
@@ -28,6 +35,7 @@
       "argerd": "2021",
       "akstur": "1234km",
       "eigandi": {
+        "notendanafn": "admin",
         "nafn": "Jón Jónsson",
         "kennitala": "241200-2120",
         "heimilisfang": "Bessastaðir 1, 115",
@@ -35,6 +43,71 @@
       },
       "tjonasaga": {
         "fjoldiTjona": 0
+      }
+    },
+    {
+      "id": 3,
+      "bilnumer": "sex69",
+      "typa": "Dacia Duster",
+      "argerd": "2013",
+      "akstur": "250000km",
+      "eigandi": {
+        "notendanafn": "icetours",
+        "nafn": "IceTours Ehf",
+        "kennitala": "150422-5249",
+        "heimilisfang": "Martröð 69, 105",
+        "simanumer": "+354 420-6969"
+      },
+      "tjonasaga": {
+        "fjoldiTjona": 4,
+        "tjon1": {
+          "typa": "Velta",
+          "dagsetning": "15.04.2018",
+          "lagad": "20.07.2018",
+          "vottad": "Max1",
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm":{
+            "skiptUm1": "Hurð, bílstjóra, framan",
+            "skiptUm2": "Framrúða",
+            "skiptUm3": "Öxull, framan"
+          }
+        },
+        "tjon2": {
+          "typa": "Velta",
+          "dagsetning": "15.04.2018",
+          "lagad": "20.07.2018",
+          "vottad": "Max1",
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm":{
+            "skiptUm1": "Hurð, bílstjóra, framan",
+            "skiptUm2": "Framrúða",
+            "skiptUm3": "Öxull, framan"
+          }
+        },
+        "tjon3": {
+          "typa": "Velta",
+          "dagsetning": "15.04.2018",
+          "lagad": "20.07.2018",
+          "vottad": "Max1",
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm":{
+            "skiptUm1": "Hurð, bílstjóra, framan",
+            "skiptUm2": "Framrúða",
+            "skiptUm3": "Öxull, framan"
+          }
+        },
+        "tjon4": {
+          "typa": "Velta",
+          "dagsetning": "15.04.2018",
+          "lagad": "20.07.2018",
+          "vottad": "Max1",
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm":{
+            "skiptUm1": "Hurð, bílstjóra, framan",
+            "skiptUm2": "Framrúða",
+            "skiptUm3": "Öxull, framan"
+          }
+        }
       }
     }
   ]

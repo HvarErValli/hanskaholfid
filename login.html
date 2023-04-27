@@ -33,11 +33,13 @@
 					<p class="fieldset">
 						<label class="image-replace email" for="signin-email">Netfang</label>
 						<input class="full-width has-padding has-border" name="email" id="signinEmail" type="email" placeholder="Netfang">
+						<span class="error-message">Þetta er ekki netfang!</span>
 					</p>
 
 					<p class="fieldset">
 						<label class="image-replace password" for="signin-password">Lykilorð</label>
 						<input class="full-width has-padding has-border" name="password" id="signinPassword" type="password"  placeholder="Lykilorð">
+						<span class="error-message">Þetta lykilorð uppfyllir ekki kröfur!</span>
 						<a href="#0" class="hide-password">Sjá</a>
 					</p>
 
@@ -52,7 +54,6 @@
 				</form>
 				
 				<p class="form-bottom-message"><a href="#0">Gleymt lykilorð?</a></p>
-				<!-- <a href="#0" class="close-form">Close</a> -->
 			</div>
 
 			<div id="signup">
@@ -73,7 +74,7 @@
 						<label class="image-replace password" for="signup-password">Lykilorð</label>
 						<input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Lykilorð">
 						<a href="#0" class="hide-password">Sjá</a>
-						<span class="error-message">Lykilorðið þarf að vera að minnsta 6 stafa langt!</span>
+						<span class="error-message">Lykilorðið þarf að vera að minnsta lagi 6 stafa langt!</span>
 					</p>
 
 					<p class="fieldset">
@@ -93,10 +94,8 @@
 						e.preventDefault();
 						const username = loginForm.signinEmail.value;
 						const password = loginForm.signinPassword.value;
-
-						if(apigetFromUsers(username, password)){
-							alert("You have successfully logged in.");
-						}})
+						apigetFromUsers(username, password)
+						})
 				</script>
 				<!-- <a href="#0" class="cd-close-form">Close</a> -->
 			</div>

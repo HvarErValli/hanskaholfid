@@ -117,12 +117,12 @@ function apigetFromUsers(email, password) {
         data.forEach(user => {
             if (user.email == email.toLowerCase()) {
                 if (user.password == password) {
-                    alert("Þú hefur verið skráð/ður/tt inn")
-                    setTimeout(function(){
-                        window.location.href = "404.html";
-                    }, 500);
+                    alert("Þú hefur verið skráð/ur inn")
+                    localStorage.setItem('current_notandi', email)
+                    setTimeout(function(){window.location.href = "userPage.html"}, 500);
                 } else {
                     loginErrorMsg.style.opacity = 1;
+                    setTimeout(function(){loginErrorMsg.style.opacity = 0;}, 1500);
                    
             }}
         })
@@ -256,7 +256,6 @@ function loader(){
 };
 
 function baetaVidTjoni(bilnumer){
-    let fjoldiTjona = 0;
     fetch("./database.json")
     .then(res => {
         return res.json();
@@ -264,37 +263,96 @@ function baetaVidTjoni(bilnumer){
     .then(data => {
         data.forEach(car => {
             if (car.bilnumer == bilnumer.toLowerCase()) {
-                fjoldiTjona = car.tjonasaga.fjoldiTjona};
+                fjoldiTjona = car.tjonasaga.fjoldiTjona
+                tjonablocks(fjoldiTjona, bilnumer)}
         })
     })
     .catch(error => console.log(error));
+}
+
+function tjonablocks(fjoldiTjona, bilnumer){
     const tjonalisti = document.getElementById("tjonasaga");
     if (fjoldiTjona == 0){
         tjonalisti.insertAdjacentHTML("beforeend", `
-            <div class="col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x text-primary mb-4"></i>
-                        <h5>Til hamingju! Þessi bíll er tjónlaus!</h5>
-                    </div>
+        <div class="col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <h1 style="text-align:center;";>Til hamingju! Þessi bíll er tjónlaus!</h1>
                 </div>
             </div>
+        </div>
         `); 
     }
     else{
-        for (let i = 0; i < fjoldiTjona; i++) {
+        for (let i = 1; i <= fjoldiTjona; i++) {
             tjonalisti.insertAdjacentHTML("beforeend", `
-                <div class="col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="service-item rounded pt-3">
+                <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item rounded pt-3" style="display:flex;">
                         <div class="p-4">
                             <i class="fa fa-3x fa-cog text-primary mb-4"></i>
-                            <h5 display:flex; align-items:center;>Bílnúmer og týpa</h5>
-                            <p id="info_bilnumer">Bílnúmer: </p>
-                            <p id="typa">Týpa: </p>
+                            <h5 id=dagsetningTjons${i}>Dagsetning tjóns: </h5>
+                            <p id="tjonaflokkur${i}">Tjónaflokkur: </p>
+                            <p id="lagad${i}">Lagað: </p>
+                            <p id="lagadAf${i}">Lagað af: </p>
+                        </div>
+                        <div class="p-4" style="position: relative;">
+                            <i class="fa fa-3x fa-cog text-primary mb-4"></i>
+                            <h5 id="kvittun">Kvittun: <a id="kvittun_link${i}" style="text-decoration:underline;">Opna</a> </h5>
+                            <p id="skiptUm1-${i}">Skipt var um: </p>
+                            <p id="skiptUm2-${i}">Skipt var um: </p>
+                            <p id="skiptUm3-${i}">Skipt var um: </p>
                         </div>
                     </div>
                 </div>
-            `); 
+            `);
+            writeTjonToHTML(bilnumer, i)
         }
     }
+}
+
+function writeTjonToHTML(bilnumer, tjonNumer){
+    fetch("./database.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        data.forEach(car => {
+            if (car.bilnumer == bilnumer.toLowerCase()) {
+                document.getElementById(`dagsetningTjons${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.dagsetning`);
+                document.getElementById(`tjonaflokkur${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.typa`); 
+                document.getElementById(`lagad${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.lagad`);
+                document.getElementById(`lagadAf${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.vottad`)
+                kvittun = document.getElementById(`kvittun_link${tjonNumer}`);
+                kvittun.setAttribute("href", eval(`car.tjonasaga.tjon${tjonNumer}.kvittun`));
+                document.getElementById(`skiptUm1-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm1`);
+                document.getElementById(`skiptUm2-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm2`);
+                document.getElementById(`skiptUm3-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm3`)
+            };
+        })
+    })
+    .catch(error => console.log(error));
+};
+
+function minSida(){
+    var current_notandi = localStorage.getItem("current_notandi");
+    fetch("./database.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        data.forEach(car => {
+            if (car.bilnumer == bilnumer.toLowerCase()) {
+                document.getElementById(`dagsetningTjons${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.dagsetning`);
+                document.getElementById(`tjonaflokkur${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.typa`); 
+                document.getElementById(`lagad${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.lagad`);
+                document.getElementById(`lagadAf${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.vottad`)
+                kvittun = document.getElementById(`kvittun_link${tjonNumer}`);
+                kvittun.setAttribute("href", eval(`car.tjonasaga.tjon${tjonNumer}.kvittun`));
+                document.getElementById(`skiptUm1-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm1`);
+                document.getElementById(`skiptUm2-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm2`);
+                document.getElementById(`skiptUm3-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm3`)
+            };
+        })
+    })
+    .catch(error => console.log(error));
 }

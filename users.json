@@ -1,10 +1,20 @@
 [
     {
+      "username": "user",
       "email": "user@example.com",
-      "password": "user"
+      "password": "user",
+      "owned_car_id": "1"
     },
     {
+      "username": "admin",
       "email": "admin@example.com",
-      "password": "admin"
-      }
+      "password": "admin",
+      "owned_car_id": "2"
+      },
+    {
+      "username": "icetours",
+      "email": "icetours@example.com",
+      "password": "icetours",
+      "owned_car_id": "3"	
+    }
   ]
