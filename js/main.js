@@ -105,7 +105,7 @@ function apigetFromDatabase(bilnumer) {
             }
         })
     })
-    .catch(error => console.log(error));
+    .catch(error => alert('Þetta bílnúmer er ekki á skrá hjá okkur'));
 };
 
 function apigetFromUsers(email, password) {
@@ -256,6 +256,7 @@ function loader(){
 };
 
 function baetaVidTjoni(bilnumer){
+    let fjoldiTjona = 0;
     fetch("./database.json")
     .then(res => {
         return res.json();
@@ -268,18 +269,32 @@ function baetaVidTjoni(bilnumer){
     })
     .catch(error => console.log(error));
     const tjonalisti = document.getElementById("tjonasaga");
-    for (let i = 0; i < fjoldiTjona; i++) {
+    if (fjoldiTjona == 0){
         tjonalisti.insertAdjacentHTML("beforeend", `
             <div class="col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
-                        <i class="fa fa-3x fa-cog text-primary mb-4"></i>
-                        <h5>Bílnúmer og týpa</h5>
-                        <p id="info_bilnumer">Bílnúmer: </p>
-                        <p id="typa">Týpa: </p>
+                        <i class="fa fa-3x text-primary mb-4"></i>
+                        <h5>Til hamingju! Þessi bíll er tjónlaus!</h5>
                     </div>
                 </div>
             </div>
         `); 
+    }
+    else{
+        for (let i = 0; i < fjoldiTjona; i++) {
+            tjonalisti.insertAdjacentHTML("beforeend", `
+                <div class="col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-cog text-primary mb-4"></i>
+                            <h5 display:flex; align-items:center;>Bílnúmer og týpa</h5>
+                            <p id="info_bilnumer">Bílnúmer: </p>
+                            <p id="typa">Týpa: </p>
+                        </div>
+                    </div>
+                </div>
+            `); 
+        }
     }
 }
