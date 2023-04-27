@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="img/favicon.ico" rel="icon">
+  <title>Innskráning</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'><link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav class="main-nav">
+	<ul>
+		<li><a class="signin" href="#0">Innskrá</a></li>
+		<li><a class="signup" href="#0">Nýskrá</a></li>
+	</ul>
+</nav>
+
+<div class="user-modal">
+		<div class="user-modal-container">
+			<ul class="switcher">
+				<li><a href="#0">Innskrá</a></li>
+				<li><a href="#0">Nýskrá</a></li>
+			</ul>
+			<div id="login-error-msg-holder">
+				<p id="login-error-msg">Rangt netfang <span id="error-msg-second-line">og/eða lykilorð</span></p>
+			</div>
+
+			<div id="login">
+				<form class="form" id="login-form">
+					<p class="fieldset">
+						<label class="image-replace email" for="signin-email">Netfang</label>
+						<input class="full-width has-padding has-border" name="email" id="signinEmail" type="email" placeholder="Netfang">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signin-password">Lykilorð</label>
+						<input class="full-width has-padding has-border" name="password" id="signinPassword" type="password"  placeholder="Lykilorð">
+						<a href="#0" class="hide-password">Sjá</a>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">Muna eftir mér</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Innskrá", id="login-button">
+					</p>
+				</form>
+				
+				<p class="form-bottom-message"><a href="#0">Gleymt lykilorð?</a></p>
+				<!-- <a href="#0" class="close-form">Close</a> -->
+			</div>
+
+			<div id="signup">
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace username" for="signup-username">Notendanafn</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Notendanafn">
+						<span class="error-message">Notendanafnið má aðeins innihalda bók- og tölustafi!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace email" for="signup-email">Netfang</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="Netfang">
+						<span class="error-message">Þetta netfang er ekki rétt!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signup-password">Lykilorð</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Lykilorð">
+						<a href="#0" class="hide-password">Sjá</a>
+						<span class="error-message">Lykilorðið þarf að vera að minnsta 6 stafa langt!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">Ég samþykki<a class="accept-terms" href="#0">skilmála</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Nýskrá">
+					</p>
+				</form>
+				<script>
+					const loginForm = document.getElementById("login-form");
+					const loginButton = document.getElementById("login-button");
+					const loginErrorMsg = document.getElementById("login-error-msg");
+					loginButton.addEventListener("click", (e) => {
+						e.preventDefault();
+						const username = loginForm.signinEmail.value;
+						const password = loginForm.signinPassword.value;
+
+						if(apigetFromUsers(username, password) == true){
+							alert("You have successfully logged in.");
+						} else {
+        					loginErrorMsg.style.opacity = 1;
+						}
+					})
+				</script>
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div>
+
+			<div id="reset-password">
+				<p class="form-message">Gleymdirðu lykilorðinu? Vinsamlegast sláðu inn netfangið þitt.</br> Þú færð hlekk í tölvupósti sem gerir þér kleyft að endursetja lykilorðið þitt.</p>
+
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace email" for="reset-email">Netfang</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="Netfang">
+						<span class="error-message">Þetta netfang er ekki tengt við neinn aðgang!</span>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Fá hlekk">
+					</p>
+				</form>
+
+				<p class="form-bottom-message"><a href="#0">Til baka í innskráningu</a></p>
+			</div>
+			<a href="#0" class="close-form">Loka</a>
+		</div>
+	</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="js/script.js"></script><script  src="js/main.js"></script>
+
+</body>
+</html>

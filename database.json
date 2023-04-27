@@ -1,0 +1,40 @@
+[
+    {
+      "id": 1,
+      "bilnumer": "mtz01",
+      "typa": "Opel Astra",
+      "argerd": "2014",
+      "akstur": "135000km",
+      "eigandi": {
+        "nafn": "Valgeir Níls Vignisson",
+        "kennitala": "230102-2790",
+        "heimilisfang": "Bakkasel 31, 109",
+        "simanumer": "+354 666-0812"
+      },
+      "tjonasaga": {
+        "tjonadur": true,
+        "tjon1": {
+          "typa": "Velta",
+          "dagsetning": "15.04.2018",
+          "lagad": "20.07.2018",
+          "vottad": "Max1"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "bilnumer": "abc12",
+      "typa": "Ferrari SF90 Stradale",
+      "argerd": "2021",
+      "akstur": "1234km",
+      "eigandi": {
+        "nafn": "Jón Jónsson",
+        "kennitala": "241200-2120",
+        "heimilisfang": "Bessastaðir 1, 115",
+        "simanumer": "+354 581-2345"
+      },
+      "tjonasaga": {
+        "tjonadur": false
+      }
+    }
+  ]
