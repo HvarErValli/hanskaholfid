@@ -4473,6 +4473,7 @@ textarea.form-control-lg{
 .modal-dialog-scrollable .modal-body{
     overflow-y:auto
 }
+
 .modal-dialog-centered{
     display:flex;
     align-items:center;
