@@ -359,7 +359,7 @@ function minSida(){
     .then(data => {
         data.forEach(car => {
             if (car.id ==  localStorage.getItem("user_id")) {
-                document.getElementById('user_bilnumer').innerHTML += car.bilnumer.toUpperCase();
+                document.getElementById('user_bilnumerOgTypa').innerHTML += (car.bilnumer.toUpperCase() +" / " + car.typa);
                 document.getElementById('user_nyskrad').innerHTML += car.nyskrad; 
                 document.getElementById('dagar_i_smurningu').innerHTML = car.id + document.getElementById('dagar_i_smurningu').innerHTML;
                 const tjonaFjoldi = car.tjonasaga.fjoldiTjona;
