@@ -5,6 +5,7 @@
       "typa": "Opel Astra",
       "argerd": "2014",
       "akstur": "135000km",
+      "nyskrad": "12.10.2019",
       "eigandi": {
         "notendanafn": "user",
         "nafn": "Valgeir Níls Vignisson",
@@ -34,6 +35,7 @@
       "typa": "Ferrari SF90 Stradale",
       "argerd": "2021",
       "akstur": "1234km",
+      "nyskrad": "19.09.2021",
       "eigandi": {
         "notendanafn": "admin",
         "nafn": "Jón Jónsson",
@@ -51,6 +53,7 @@
       "typa": "Dacia Duster",
       "argerd": "2013",
       "akstur": "250000km",
+      "nyskrad": "12.10.2018",
       "eigandi": {
         "notendanafn": "icetours",
         "nafn": "IceTours Ehf",

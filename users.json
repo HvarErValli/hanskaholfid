@@ -1,20 +1,35 @@
 [
     {
-      "username": "user",
-      "email": "user@example.com",
-      "password": "user",
-      "owned_car_id": "1"
+      "notendanafn": "user",
+      "netfang": "user@example.com",
+      "lykilord": "user",
+      "fjoldiBila": "1",
+      "bilar_id": "1",
+      "nafn": "Valgeir Níls Vignisson",
+      "kennitala": "230102-2790",
+      "heimilisfang": "Bakkasel 31, 109",
+      "simanumer": "+354 666-0812"
     },
     {
-      "username": "admin",
-      "email": "admin@example.com",
-      "password": "admin",
-      "owned_car_id": "2"
+      "notendanafn": "admin",
+      "netfang": "admin@example.com",
+      "lykilord": "admin",
+      "fjoldiBila": "1",
+      "bilar_id": "2",
+      "nafn": "Jón Jónsson",
+      "kennitala": "241200-2120",
+      "heimilisfang": "Bessastaðir 1, 115",
+      "simanumer": "+354 581-2345"
       },
     {
-      "username": "icetours",
-      "email": "icetours@example.com",
-      "password": "icetours",
-      "owned_car_id": "3"	
+      "notendanafn": "icetours",
+      "netfang": "icetours@example.com",
+      "lykilord": "icetours",
+      "fjoldiBila": "1",
+      "bilar_id": "3"	,
+      "nafn": "IceTours Ehf",
+      "kennitala": "150422-5249",
+      "heimilisfang": "Martröð 69, 105",
+      "simanumer": "+354 420-6969"
     }
   ]

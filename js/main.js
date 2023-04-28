@@ -108,17 +108,17 @@ function apigetFromDatabase(bilnumer) {
     .catch(error => alert('Þetta bílnúmer er ekki á skrá hjá okkur'));
 };
 
-function apigetFromUsers(email, password) {
+function apigetFromUsers(netfang, lykilord) {
     fetch("./users.json")
     .then(res => {
         return res.json();
     })
     .then(data => {
         data.forEach(user => {
-            if (user.email == email.toLowerCase()) {
-                if (user.password == password) {
+            if (user.netfang == netfang.toLowerCase()) {
+                if (user.lykilord == lykilord) {
                     alert("Þú hefur verið skráð/ur inn")
-                    localStorage.setItem('current_notandi', email)
+                    localStorage.setItem('current_notandi', netfang)
                     setTimeout(function(){window.location.href = "userPage.html"}, 500);
                 } else {
                     loginErrorMsg.style.opacity = 1;
@@ -335,22 +335,41 @@ function writeTjonToHTML(bilnumer, tjonNumer){
 
 function minSida(){
     var current_notandi = localStorage.getItem("current_notandi");
+    fetch("./users.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        data.forEach(user => {
+            if (user.netfang == current_notandi.toLowerCase()) {
+                document.getElementById('user_nafn').innerHTML += user.nafn;
+                document.getElementById('user_netfang').innerHTML += user.netfang; 
+                document.getElementById('user_kennitala').innerHTML += user.kennitala;
+                document.getElementById('user_simanumer').innerHTML += user.simanumer;
+                document.getElementById('user_heimilisfang').innerHTML += user.heimilisfang;
+                document.getElementById('user_bilaFjoldi').innerHTML += user.fjoldiBila;
+                localStorage.setItem('user_id', user.bilar_id)
+            };
+        })
+    })
     fetch("./database.json")
     .then(res => {
         return res.json();
     })
     .then(data => {
         data.forEach(car => {
-            if (car.bilnumer == bilnumer.toLowerCase()) {
-                document.getElementById(`dagsetningTjons${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.dagsetning`);
-                document.getElementById(`tjonaflokkur${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.typa`); 
-                document.getElementById(`lagad${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.lagad`);
-                document.getElementById(`lagadAf${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.vottad`)
-                kvittun = document.getElementById(`kvittun_link${tjonNumer}`);
-                kvittun.setAttribute("href", eval(`car.tjonasaga.tjon${tjonNumer}.kvittun`));
-                document.getElementById(`skiptUm1-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm1`);
-                document.getElementById(`skiptUm2-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm2`);
-                document.getElementById(`skiptUm3-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm3`)
+            if (car.id ==  localStorage.getItem("user_id")) {
+                document.getElementById('user_bilnumer').innerHTML += car.bilnumer.toUpperCase();
+                document.getElementById('user_nyskrad').innerHTML += car.nyskrad; 
+                document.getElementById('dagar_i_smurningu').innerHTML = car.id + document.getElementById('dagar_i_smurningu').innerHTML;
+                const tjonaFjoldi = car.tjonasaga.fjoldiTjona;
+                if (tjonaFjoldi == 0 ){ 
+                    document.getElementById('sidasta_vidgerd').innerHTML += 'Aldrei';
+                } else{
+                    document.getElementById('sidasta_vidgerd').innerHTML += eval(`car.tjonasaga.tjon${car.tjonasaga.fjoldiTjona}.lagad`);
+                }
+                document.getElementById('user_heimilisfang').innerHTML += user.heimilisfang;
+                document.getElementById('user_bilaFjoldi').innerHTML += user.fjoldiBila;
             };
         })
     })
