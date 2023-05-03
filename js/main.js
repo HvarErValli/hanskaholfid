@@ -117,7 +117,6 @@ function apigetFromUsers(netfang, lykilord) {
         data.forEach(user => {
             if (user.netfang == netfang.toLowerCase()) {
                 if (user.lykilord == lykilord) {
-                    alert("Þú hefur verið skráð/ur inn")
                     localStorage.setItem('current_notandi', netfang)
                     setTimeout(function(){window.location.href = "userPage.html"}, 500);
                 } else {
@@ -227,6 +226,7 @@ function writeUserSimanumerToHTML(bilnumer, tag_id){
     })
     .catch(error => console.log(error));
 };
+
 function writeUserHeimilisfangToHTML(bilnumer, tag_id){
     fetch("./database.json")
     .then(res => {
@@ -253,6 +253,7 @@ function loader(){
     writeUserSimanumerToHTML(current_bilnumerid, "simanumer")
     writeUserHeimilisfangToHTML(current_bilnumerid, "heimilisfang")
     baetaVidTjoni(current_bilnumerid)
+    baetaVidSmurningu(current_bilnumerid)
 };
 
 function baetaVidTjoni(bilnumer){
@@ -265,6 +266,21 @@ function baetaVidTjoni(bilnumer){
             if (car.bilnumer == bilnumer.toLowerCase()) {
                 fjoldiTjona = car.tjonasaga.fjoldiTjona
                 tjonablocks(fjoldiTjona, bilnumer)}
+        })
+    })
+    .catch(error => console.log(error));
+}
+
+function baetaVidSmurningu(bilnumer){
+    fetch("./database.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        data.forEach(car => {
+            if (car.bilnumer == bilnumer.toLowerCase()) {
+                fjoldiSmurninga = car.smurbok.fjoldiSmurninga
+                smurblocks(fjoldiSmurninga, bilnumer)}
         })
     })
     .catch(error => console.log(error));
@@ -310,6 +326,39 @@ function tjonablocks(fjoldiTjona, bilnumer){
     }
 }
 
+function smurblocks(fjoldiSmurninga, bilnumer){
+    const smurbok = document.getElementById("smurbok");
+    if (fjoldiSmurninga == 0){
+        smurbok.insertAdjacentHTML("beforeend", `
+        <div class="col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <h1 style="text-align:center;";>ATH! Þessi bíll er ekki með skráða smurningu</h1>
+                </div>
+            </div>
+        </div>
+        `); 
+    }
+    else{
+        for (let i = 1; i <= fjoldiSmurninga; i++) {
+            smurbok.insertAdjacentHTML("beforeend", `
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item rounded pt-3" style="display:flex;">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-cog text-primary mb-4"></i>
+                            <h5 id=dagsetningSmurningar${i}>Dagsetning smurningar: </h5>
+                            <p id="kilometrar${i}">Kílómetrar: </p>
+                            <p id="verkstaedi${i}">Verkstæði: </p>
+                            <h5 id="kvittunSmurning">Kvittun: <a id="kvittun_smurning_link${i}" style="text-decoration:underline;">Opna</a> </h5>
+                        </div>
+                    </div>
+                </div>
+            `);
+            writeSmurningToHTML(bilnumer, i)
+        }
+    }
+}
+
 function writeTjonToHTML(bilnumer, tjonNumer){
     fetch("./database.json")
     .then(res => {
@@ -327,6 +376,25 @@ function writeTjonToHTML(bilnumer, tjonNumer){
                 document.getElementById(`skiptUm1-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm1`);
                 document.getElementById(`skiptUm2-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm2`);
                 document.getElementById(`skiptUm3-${tjonNumer}`).innerHTML += eval(`car.tjonasaga.tjon${tjonNumer}.skiptUm.skiptUm3`)
+            };
+        })
+    })
+    .catch(error => console.log(error));
+};
+
+function writeSmurningToHTML(bilnumer, smurningNumer){
+    fetch("./database.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        data.forEach(car => {
+            if (car.bilnumer == bilnumer.toLowerCase()) {
+                document.getElementById(`dagsetningSmurningar${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.dagsetning`);
+                document.getElementById(`kilometrar${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.kilometrar`); 
+                document.getElementById(`verkstaedi${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.vottad`)
+                kvittun = document.getElementById(`kvittun_smurning_link${smurningNumer}`);
+                kvittun.setAttribute("href", eval(`car.smurbok.smurning${smurningNumer}.kvittun`));
             };
         })
     })

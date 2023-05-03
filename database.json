@@ -27,6 +27,21 @@
             "skiptUm3": "Öxull, framan"
           }
         }
+      },
+      "smurbok": {
+        "fjoldiSmurninga": 2,
+        "smurning1": {
+          "dagsetning": "15.04.2018",
+          "kilometrar": "98.124",
+          "vottad": "Tékkland",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning2": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        }
       }
     },
     {
@@ -45,6 +60,15 @@
       },
       "tjonasaga": {
         "fjoldiTjona": 0
+      },
+      "smurbok": {
+        "fjoldiSmurninga": 1,
+        "smurning1": {
+          "dagsetning": "22.12.2021",
+          "kilometrar": "908",
+          "vottad": "Tékkland",
+          "kvittun": "./img/fake_kvittun.pdf"
+        }
       }
     },
     {
@@ -110,6 +134,81 @@
             "skiptUm2": "Framrúða",
             "skiptUm3": "Öxull, framan"
           }
+        }
+      },
+      "smurbok": {
+        "fjoldiSmurninga": 12,
+        "smurning1": {
+          "dagsetning": "15.04.2018",
+          "kilometrar": "98.124",
+          "vottad": "Tékkland",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning2": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning3": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning4": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning5": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning6": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning7": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning8": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning9": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning10": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning11": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
+        },
+        "smurning12": {
+          "dagsetning": "15.04.2019",
+          "kilometrar": "112.124",
+          "vottad": "Brimborg",
+          "kvittun": "./img/fake_kvittun.pdf"
         }
       }
     }
