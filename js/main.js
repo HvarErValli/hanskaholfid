@@ -342,14 +342,30 @@ function smurblocks(fjoldiSmurninga, bilnumer){
     else{
         for (let i = 1; i <= fjoldiSmurninga; i++) {
             smurbok.insertAdjacentHTML("beforeend", `
-                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="service-item rounded pt-3" style="display:flex;">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-cog text-primary mb-4"></i>
+                        <div class="p-1">
                             <h5 id=dagsetningSmurningar${i}>Dagsetning smurningar: </h5>
                             <p id="kilometrar${i}">Kílómetrar: </p>
-                            <p id="verkstaedi${i}">Verkstæði: </p>
+                        </div>
+                        <div class="p-1" style="position:relative";>
                             <h5 id="kvittunSmurning">Kvittun: <a id="kvittun_smurning_link${i}" style="text-decoration:underline;">Opna</a> </h5>
+                            <p id="verkstaedi${i}">Verkstæði: </p>
+                        </div>
+                        <div class="p-1" style="position:relative";>
+                            <h5 ">Skipt um: </h5>
+                        </div>
+                        <div class="p-1" style="position:relative";>
+                            <p id="frjokorn${i}">Frjókornasía: </p>
+                            <p id="oliusia${i}">Olíusía: </p>
+                        </div>
+                        <div class="p-1" style="position:relative";>
+                            <p id="kaelivokvi${i}">Kælivökva: </p>
+                            <p id="rudupiss${i}">Rúðupiss: </p>
+                        </div>
+                        <div class="p-1" style="position:relative";>
+                            <p id="adblue${i}">AdBlue: </p>
+                            <p id="tbd${i}">TBD: </p>
                         </div>
                     </div>
                 </div>
@@ -395,6 +411,11 @@ function writeSmurningToHTML(bilnumer, smurningNumer){
                 document.getElementById(`verkstaedi${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.vottad`)
                 kvittun = document.getElementById(`kvittun_smurning_link${smurningNumer}`);
                 kvittun.setAttribute("href", eval(`car.smurbok.smurning${smurningNumer}.kvittun`));
+                document.getElementById(`frjokorn${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.skiptUm.frjokorn`)
+                document.getElementById(`oliusia${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.skiptUm.oliusia`)
+                document.getElementById(`kaelivokvi${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.skiptUm.kaelivokvi`)
+                document.getElementById(`rudupiss${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.skiptUm.rudupiss`)
+                document.getElementById(`adblue${smurningNumer}`).innerHTML += eval(`car.smurbok.smurning${smurningNumer}.skiptUm.adblue`)
             };
         })
     })

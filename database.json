@@ -34,13 +34,27 @@
           "dagsetning": "15.04.2018",
           "kilometrar": "98.124",
           "vottad": "Tékkland",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning2": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         }
       }
     },
@@ -67,7 +81,14 @@
           "dagsetning": "22.12.2021",
           "kilometrar": "908",
           "vottad": "Tékkland",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         }
       }
     },
@@ -142,73 +163,157 @@
           "dagsetning": "15.04.2018",
           "kilometrar": "98.124",
           "vottad": "Tékkland",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning2": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning3": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning4": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning5": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning6": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning7": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning8": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning9": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning10": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning11": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         },
         "smurning12": {
           "dagsetning": "15.04.2019",
           "kilometrar": "112.124",
           "vottad": "Brimborg",
-          "kvittun": "./img/fake_kvittun.pdf"
+          "kvittun": "./img/fake_kvittun.pdf",
+          "skiptUm": {
+            "frjokorn": "Já",
+            "oliusia": "Nei",
+            "kaelivokvi": "Nei",
+            "adblue": "Nei",
+            "rudupiss": "Já"
+          }
         }
       }
     }
